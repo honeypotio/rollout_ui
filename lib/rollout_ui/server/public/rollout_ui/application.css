@@ -838,8 +838,14 @@ h1 img {
   padding: 0 25px;
 }
 
+.col-small {
+  float: left;
+  width: 120px;
+  padding: 0 25px;
+}
+
 #container {
-  width: 960px;
+  width: 1100px;
   margin: 0 auto;
 }
 
