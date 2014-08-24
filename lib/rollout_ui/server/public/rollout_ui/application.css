@@ -838,8 +838,14 @@ h1 img {
   padding: 0 25px;
 }
 
+.col-small {
+  float: left;
+  width: 120px;
+  padding: 0 25px;
+}
+
 #container {
-  width: 960px;
+  width: 1100px;
   margin: 0 auto;
 }
 
@@ -886,12 +892,12 @@ h1 img {
 }
 
 #features .feature .users {
-  width: 172px;
+  width: 220px;
   line-height: 27px;
 }
 
 #features .feature .percentage {
-  width: 187px;
+  width: 100px;
 }
 
 #features .feature .groups {
@@ -908,7 +914,7 @@ h1 img {
 }
 
 #footer {
-  font-family: 'Ultra', serif;
+  font-family: 'Tahoma';
   font-size: 16px;
   text-align: center;
   color: #f4b71d;
