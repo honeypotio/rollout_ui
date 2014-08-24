@@ -1,10 +1,11 @@
 <h2><%= feature.name %></h2>
 
-<div class="col">
+<div class="col-small">
 <form accept-charset="UTF-8" action="<%= url_path("#{feature.name}/update") %>" class="percentage_form" data-remote="true" method="post">
     <label>Percentage</label>
     <select class="percentage" name="percentage">
       <% 101.times do |i| %>
+        <% next unless i.even? %>
         <option value="<%= i %>"<%= " selected='selected'" if feature.percentage == i.to_s %>><%= i %>%</option>
       <% end %>
     </select>
@@ -25,10 +26,18 @@
   </form>
 </div>
 
-<div class="col">
+<div class="col-large">
   <form accept-charset="UTF-8" action="<%= url_path("#{feature.name}/update") %>" class="users_form" data-remote="true" method="post">
     <label>Add User ID</label>
-    <input class="users" type="text" name="users[]" value="<%= feature.user_ids.join(",") %>" data-placeholder="Enter User ID" />
+  <%# @TODO Temporary Hack %>
+    <%
+      over_max = feature.user_ids.size > 100
+      ids = feature.user_ids[0..100]
+    %>    
+    <input class="users" type="text" name="users[]" value="<%= ids.join(",") %>" data-placeholder="Enter User ID" />
     <input type="submit" value="Save" />
   </form>
+  <% if over_max %>
+    <label style="color:red">Caution: list truncated, not all IDs included!</label>
+  <% end %>  
 </div>
