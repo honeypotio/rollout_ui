@@ -30,8 +30,8 @@
     <label>Add User ID</label>
   <%# @TODO Temporary Hack %>
     <%
-      over_max = feature.user_ids.size > feature.class.MAX_FEATURES_FOR_UI
-      ids = feature.user_ids[0..feature.class.MAX_FEATURES_FOR_UI]
+      over_max = feature.user_ids.size > 100
+      ids = feature.user_ids[0..100]
     %>    
     <input class="users" type="text" name="users[]" value="<%= ids.join(",") %>" data-placeholder="Enter User ID" />
     <input type="submit" value="Save" />

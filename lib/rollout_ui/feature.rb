@@ -1,8 +1,6 @@
 module RolloutUi
   class Feature
 
-    MAX_FEATURES_FOR_UI = 100
-
     User = Struct.new(:id)
 
     attr_reader :name
