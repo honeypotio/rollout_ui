@@ -1,14 +1,13 @@
 GIT
-  remote: git://github.com/jamesgolick/rollout.git
-  revision: 70973c95b38d751a690690b4f1ad7b8af8865f22
+  remote: git://github.com/fiverr/rollout.git
+  revision: c552b85d0927883e5fb3f764f247f4cfca6b2943
   specs:
-    rollout (2.0.0c)
-      redis
+    rollout (2.0.0)
 
 PATH
   remote: .
   specs:
-    rollout_ui (0.2.0)
+    rollout_ui (0.3.0)
       rollout
 
 GEM
