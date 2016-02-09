@@ -8,6 +8,10 @@
   <body>
     <div id="container">
       <h1><img alt="Rollout" src="<%=u 'rollout_ui/rollout.png' %>" /></h1>
+      <form action="/rollout/search" method="post">
+        <input type="text" name="needle" value="<%= params['needle'] %>"/>
+        <input type="submit" value="Search"/>
+      </form>
       <%= yield %>
     </div>
 

@@ -17,8 +17,12 @@ module RolloutUi
       redis.sadd(:features, feature)
     end
 
-    def features
+    def features(search_str = nil)
       features = redis.smembers(:features)
+      if search_str
+        search_str = search_str.downcase
+        features.keep_if { |feature| feature.downcase =~ /#{search_str}/ }
+      end
       features ? features.sort : []
     end
 

@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'erb'
 require 'time'
+require 'pry'
 
 if defined? Encoding
   Encoding.default_external = Encoding::UTF_8
@@ -61,6 +62,19 @@ module RolloutUi
 
       response["Cache-Control"] = "max-age=0, private, must-revalidate"
       erb :index, { :layout => true }
+    end
+
+    post "/search" do
+      @wrapper = RolloutUi::Wrapper.new
+      @features = @wrapper.features(params["needle"]).map{ |feature| RolloutUi::Feature.new(feature) }
+
+      response["Cache-Control"] = "max-age=0, private, must-revalidate"
+      erb :index, { :layout => true }
+    end
+
+    get "/search" do
+      response["Cache-Control"] = "max-age=0, private, must-revalidate"
+      erb :search, { :layout => true }
     end
 
     post '/:feature/update' do
