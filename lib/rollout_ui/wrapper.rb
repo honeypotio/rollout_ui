@@ -18,7 +18,7 @@ module RolloutUi
     end
 
     def features(search_str = nil)
-      features = redis.smembers(:features)
+      features = redis.get('feature:__features__').to_s.split(',')
       if search_str
         search_str = search_str.downcase
         features.keep_if { |feature| feature.downcase =~ /#{search_str}/ }
