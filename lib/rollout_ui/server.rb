@@ -1,7 +1,6 @@
 require 'sinatra/base'
 require 'erb'
 require 'time'
-require 'pry'
 
 if defined? Encoding
   Encoding.default_external = Encoding::UTF_8
