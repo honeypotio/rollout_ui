@@ -30,5 +30,11 @@
         $(this).closest("form").submit();
       });
     });
+    (function() {
+      var $form = $('form[action="/rollout/search"]');
+      if ($form.find('input[name="needle"]').val()) {
+        $form.trigger('submit');
+      }
+    }());
   </script>
 </html>
