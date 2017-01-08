@@ -19,11 +19,14 @@ module RolloutUi
 
     def features(search_str = nil)
       features = redis.get('feature:__features__').to_s.split(',')
-      if search_str
-        search_str = search_str.downcase
-        features.keep_if { |feature| feature.downcase =~ /#{search_str}/ }
+      deleted_features = redis.smembers(:deleted_rollout_features)
+
+      features.keep_if do |feature|
+        next false if deleted_features.include?(feature)
+        search_str.nil? || feature.downcase =~ /#{search_str.downcase}/
       end
-      features ? features.sort : []
+
+      features.sort
     end
 
     def redis

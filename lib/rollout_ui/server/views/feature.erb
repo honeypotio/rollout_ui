@@ -1,3 +1,19 @@
+<form class="trash_form" accept-charset="UTF-8" action="<%= url_path("#{feature.name}/destroy") %>" data-remote="true" method="post" >
+  <button type="button" onclick="hideMe('<%= feature.name %>')" class="trash-btn">
+    <img src="<%=u 'rollout_ui/trash.png' %>" />
+  </button>
+</form>
+
+<script>
+  function hideMe(feature) {
+      if (confirm('Are you sure you want to delete ' + feature + '?')){
+          var element = document.getElementById(feature);
+          element.style.display = 'none';
+          element.querySelector('.trash_form').submit();
+      }
+  }
+</script>
+
 <h2><%= feature.name %></h2>
 
 <div class="col-small">
@@ -33,11 +49,11 @@
     <%
       over_max = feature.user_ids.size > 100
       ids = feature.user_ids[0..100]
-    %>    
+    %>
     <input class="users" type="text" name="users[]" value="<%= ids.join(",") %>" data-placeholder="Enter User ID" />
     <input type="submit" value="Save" />
   </form>
   <% if over_max %>
     <label style="color:red">Caution: list truncated, not all IDs included!</label>
-  <% end %>  
+  <% end %>
 </div>

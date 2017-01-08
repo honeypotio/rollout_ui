@@ -79,7 +79,7 @@ body {
     margin: 0;
 }
 
-/* 
+/*
  * Addresses font-family inconsistency between 'textarea' and other form elements.
  */
 
@@ -139,9 +139,9 @@ abbr[title] {
  * Addresses style set to 'bolder' in FF3/4, S4/5, Chrome
 */
 
-b, 
-strong { 
-    font-weight: bold; 
+b,
+strong {
+    font-weight: bold;
 }
 
 blockquote {
@@ -271,7 +271,7 @@ img {
 }
 
 /*
- * Corrects overflow displayed oddly in IE9 
+ * Corrects overflow displayed oddly in IE9
  */
 
 svg:not(:root) {
@@ -357,8 +357,8 @@ input {
  */
 
 button,
-input[type="button"], 
-input[type="reset"], 
+input[type="button"],
+input[type="reset"],
 input[type="submit"] {
     cursor: pointer; /* 1 */
     -webkit-appearance: button; /* 2 */
@@ -422,7 +422,7 @@ textarea {
    Tables
    ========================================================================== */
 
-/* 
+/*
  * Remove most spacing between table cells
  */
 
@@ -775,12 +775,12 @@ table {
 .chzn-rtl { direction:rtl;text-align: right; }
 .chzn-rtl .chzn-single { padding-left: 0; padding-right: 8px; }
 .chzn-rtl .chzn-single span { margin-left: 26px; margin-right: 0; }
-.chzn-rtl .chzn-single div { 
-  left: 0; right: auto; 
+.chzn-rtl .chzn-single div {
+  left: 0; right: auto;
   border-left: none; border-right: 1px solid #aaaaaa;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius   : 4px 0 0 4px;
-  border-radius        : 4px 0 0 4px; 
+  border-radius        : 4px 0 0 4px;
 }
 .chzn-rtl .chzn-choices li { float: right; }
 .chzn-rtl .chzn-choices .search-choice { padding: 3px 6px 3px 19px; margin: 3px 5px 3px 0; }
@@ -791,7 +791,7 @@ table {
 .chzn-rtl .chzn-search input {
   background: url('chosen-sprite.png') no-repeat -38px -22px, #ffffff;
   background: url('chosen-sprite.png') no-repeat -38px -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url('chosen-sprite.png') no-repeat -38px -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);  
+  background: url('chosen-sprite.png') no-repeat -38px -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
   background: url('chosen-sprite.png') no-repeat -38px -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
   background: url('chosen-sprite.png') no-repeat -38px -22px, -o-linear-gradient(bottom, white 85%, #eeeeee 99%);
   background: url('chosen-sprite.png') no-repeat -38px -22px, -ms-linear-gradient(top, #ffffff 85%,#eeeeee 99%);
@@ -850,6 +850,19 @@ h1 img {
   padding: 0 25px;
 }
 
+.trash-btn {
+  float: right;
+  margin-right: 15px;
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent;
+}
+
+.trash-btn img {
+  filter: invert(100%);
+  width: 20px;
+  height: 18px;
+}
 
 #container {
   width: 1100px;

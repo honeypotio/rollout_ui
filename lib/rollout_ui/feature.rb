@@ -22,6 +22,10 @@ module RolloutUi
       rollout.get(feature_for(name)).users.to_a
     end
 
+    def delete!
+      redis.sadd(:deleted_rollout_features, name)
+    end
+
     def percentage=(percentage_val)
       rollout.activate_percentage(name, percentage_val.to_i)
     end

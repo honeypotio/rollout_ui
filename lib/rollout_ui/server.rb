@@ -85,5 +85,11 @@ module RolloutUi
 
       redirect url_path
     end
+
+    post '/:feature/destroy' do
+      RolloutUi::Feature.new(params["feature"]).delete!
+      redirect url_path
+    end
+
   end
 end
