@@ -23,7 +23,7 @@ module RolloutUi
 
       features.keep_if do |feature|
         next false if deleted_features.include?(feature)
-        search_str.nil? || feature.downcase =~ /#{search_str.downcase}/
+        search_str.to_s == '' || feature.downcase =~ /#{search_str.downcase}/
       end
 
       features.sort
