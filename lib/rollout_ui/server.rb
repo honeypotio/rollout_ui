@@ -66,6 +66,7 @@ module RolloutUi
     post "/search" do
       @wrapper = RolloutUi::Wrapper.new
       @features = @wrapper.features(params["needle"]).map{ |feature| RolloutUi::Feature.new(feature) }
+      params["needle"] = nil
 
       response["Cache-Control"] = "max-age=0, private, must-revalidate"
       erb :index, { :layout => true }
